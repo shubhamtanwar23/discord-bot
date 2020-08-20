@@ -1,0 +1,2 @@
+class StorageManagerNotFound(Exception):
+    pass
