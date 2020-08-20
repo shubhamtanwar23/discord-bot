@@ -20,6 +20,7 @@ Create a `.env` or setup environment following environment varibales
 1. DISCORD_TOKEN
 2. GOOGLE_SEARCH_ENGINE_KEY
 3. GOOGLE_API_KEY
+4. REDIS_URL
 
 To get `GOOGLE_SEARCH_ENGINE_KEY` and `GOOGLE_API_KEY` checkout the [Custom Search JSON API](https://developers.google.com/custom-search/v1/overview)
 
