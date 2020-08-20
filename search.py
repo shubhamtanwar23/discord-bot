@@ -21,13 +21,12 @@ class GoogleSearch:
                 'key': settings.GOOGLE_API_KEY,
                 'cx': settings.GOOGLE_SEARCH_ENGINE_KEY,
                 'q': query,
+                'num': max_count or 10
             },
         ) as response:
             response.status
             search_result = await response.json()
 
-        if max_count:
-            return search_result['items'][:max_count]
         return search_result['items']
 
     # aiohttp uses session pool so we are just keeping one session for the whole application 
