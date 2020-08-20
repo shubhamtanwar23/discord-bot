@@ -24,6 +24,10 @@ class RedisManager(StorageManager):
     async def save_recent_search(self, user_id: int, new_search_keyword: str) -> None:
         client = await self.get_client()
         # Using set for uniquness of keywords
+        #
+        # As per use case we can use channel.id or guild.id along with user.id for key
+        # as the current implementation saves results for a user which may consist of keywords
+        # from various guilds(server) and channels
         await client.sadd(user_id, new_search_keyword)
 
     async def get_recent_searches_for_keyword(self, user_id: int, keyword: str) -> List[str]:
